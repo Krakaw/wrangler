@@ -26,7 +26,7 @@ pub fn build_target(target: &Target) -> Result<String, failure::Error> {
             })?;
 
             let binary_path = install::install_wasm_pack()?;
-            let args = ["build", "--target", "no-modules"];
+            let args = ["build", "--target", "no-modules" ,".","--" ,"--features" ,"wasm,wasm-matcher"];
 
             let command = command(&args, &binary_path);
             let command_name = format!("{:?}", command);
